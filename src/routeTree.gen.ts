@@ -9,38 +9,194 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as PedidoRouteImport } from './routes/pedido'
+import { Route as ParceirosRouteImport } from './routes/parceiros'
+import { Route as MarketplaceRouteImport } from './routes/marketplace'
+import { Route as CarrinhoRouteImport } from './routes/carrinho'
+import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as MarisqueiraQuestionarioRouteImport } from './routes/marisqueira.questionario'
+import { Route as MarisqueiraPainelRouteImport } from './routes/marisqueira.painel'
+import { Route as MarisqueiraCadastroRouteImport } from './routes/marisqueira.cadastro'
+import { Route as MarisqueiraIdRouteImport } from './routes/marisqueira.$id'
 
+const PedidoRoute = PedidoRouteImport.update({
+  id: '/pedido',
+  path: '/pedido',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParceirosRoute = ParceirosRouteImport.update({
+  id: '/parceiros',
+  path: '/parceiros',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MarketplaceRoute = MarketplaceRouteImport.update({
+  id: '/marketplace',
+  path: '/marketplace',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CarrinhoRoute = CarrinhoRouteImport.update({
+  id: '/carrinho',
+  path: '/carrinho',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MarisqueiraQuestionarioRoute = MarisqueiraQuestionarioRouteImport.update({
+  id: '/marisqueira/questionario',
+  path: '/marisqueira/questionario',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MarisqueiraPainelRoute = MarisqueiraPainelRouteImport.update({
+  id: '/marisqueira/painel',
+  path: '/marisqueira/painel',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MarisqueiraCadastroRoute = MarisqueiraCadastroRouteImport.update({
+  id: '/marisqueira/cadastro',
+  path: '/marisqueira/cadastro',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MarisqueiraIdRoute = MarisqueiraIdRouteImport.update({
+  id: '/marisqueira/$id',
+  path: '/marisqueira/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/carrinho': typeof CarrinhoRoute
+  '/marketplace': typeof MarketplaceRoute
+  '/parceiros': typeof ParceirosRoute
+  '/pedido': typeof PedidoRoute
+  '/marisqueira/$id': typeof MarisqueiraIdRoute
+  '/marisqueira/cadastro': typeof MarisqueiraCadastroRoute
+  '/marisqueira/painel': typeof MarisqueiraPainelRoute
+  '/marisqueira/questionario': typeof MarisqueiraQuestionarioRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/carrinho': typeof CarrinhoRoute
+  '/marketplace': typeof MarketplaceRoute
+  '/parceiros': typeof ParceirosRoute
+  '/pedido': typeof PedidoRoute
+  '/marisqueira/$id': typeof MarisqueiraIdRoute
+  '/marisqueira/cadastro': typeof MarisqueiraCadastroRoute
+  '/marisqueira/painel': typeof MarisqueiraPainelRoute
+  '/marisqueira/questionario': typeof MarisqueiraQuestionarioRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/carrinho': typeof CarrinhoRoute
+  '/marketplace': typeof MarketplaceRoute
+  '/parceiros': typeof ParceirosRoute
+  '/pedido': typeof PedidoRoute
+  '/marisqueira/$id': typeof MarisqueiraIdRoute
+  '/marisqueira/cadastro': typeof MarisqueiraCadastroRoute
+  '/marisqueira/painel': typeof MarisqueiraPainelRoute
+  '/marisqueira/questionario': typeof MarisqueiraQuestionarioRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/admin'
+    | '/carrinho'
+    | '/marketplace'
+    | '/parceiros'
+    | '/pedido'
+    | '/marisqueira/$id'
+    | '/marisqueira/cadastro'
+    | '/marisqueira/painel'
+    | '/marisqueira/questionario'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/admin'
+    | '/carrinho'
+    | '/marketplace'
+    | '/parceiros'
+    | '/pedido'
+    | '/marisqueira/$id'
+    | '/marisqueira/cadastro'
+    | '/marisqueira/painel'
+    | '/marisqueira/questionario'
+  id:
+    | '__root__'
+    | '/'
+    | '/admin'
+    | '/carrinho'
+    | '/marketplace'
+    | '/parceiros'
+    | '/pedido'
+    | '/marisqueira/$id'
+    | '/marisqueira/cadastro'
+    | '/marisqueira/painel'
+    | '/marisqueira/questionario'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminRoute: typeof AdminRoute
+  CarrinhoRoute: typeof CarrinhoRoute
+  MarketplaceRoute: typeof MarketplaceRoute
+  ParceirosRoute: typeof ParceirosRoute
+  PedidoRoute: typeof PedidoRoute
+  MarisqueiraIdRoute: typeof MarisqueiraIdRoute
+  MarisqueiraCadastroRoute: typeof MarisqueiraCadastroRoute
+  MarisqueiraPainelRoute: typeof MarisqueiraPainelRoute
+  MarisqueiraQuestionarioRoute: typeof MarisqueiraQuestionarioRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/pedido': {
+      id: '/pedido'
+      path: '/pedido'
+      fullPath: '/pedido'
+      preLoaderRoute: typeof PedidoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/parceiros': {
+      id: '/parceiros'
+      path: '/parceiros'
+      fullPath: '/parceiros'
+      preLoaderRoute: typeof ParceirosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/marketplace': {
+      id: '/marketplace'
+      path: '/marketplace'
+      fullPath: '/marketplace'
+      preLoaderRoute: typeof MarketplaceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/carrinho': {
+      id: '/carrinho'
+      path: '/carrinho'
+      fullPath: '/carrinho'
+      preLoaderRoute: typeof CarrinhoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,11 +204,48 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/marisqueira/questionario': {
+      id: '/marisqueira/questionario'
+      path: '/marisqueira/questionario'
+      fullPath: '/marisqueira/questionario'
+      preLoaderRoute: typeof MarisqueiraQuestionarioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/marisqueira/painel': {
+      id: '/marisqueira/painel'
+      path: '/marisqueira/painel'
+      fullPath: '/marisqueira/painel'
+      preLoaderRoute: typeof MarisqueiraPainelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/marisqueira/cadastro': {
+      id: '/marisqueira/cadastro'
+      path: '/marisqueira/cadastro'
+      fullPath: '/marisqueira/cadastro'
+      preLoaderRoute: typeof MarisqueiraCadastroRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/marisqueira/$id': {
+      id: '/marisqueira/$id'
+      path: '/marisqueira/$id'
+      fullPath: '/marisqueira/$id'
+      preLoaderRoute: typeof MarisqueiraIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRoute: AdminRoute,
+  CarrinhoRoute: CarrinhoRoute,
+  MarketplaceRoute: MarketplaceRoute,
+  ParceirosRoute: ParceirosRoute,
+  PedidoRoute: PedidoRoute,
+  MarisqueiraIdRoute: MarisqueiraIdRoute,
+  MarisqueiraCadastroRoute: MarisqueiraCadastroRoute,
+  MarisqueiraPainelRoute: MarisqueiraPainelRoute,
+  MarisqueiraQuestionarioRoute: MarisqueiraQuestionarioRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
