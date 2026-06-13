@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { heroImg } from "@/lib/mock-data";
 import marisqueiLogo from "@/assets/marisquei-logo.png.asset.json";
+import marisqueiIcon from "@/assets/marisquei-icon.png.asset.json";
 import { Shell, ShoppingBasket, Handshake } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -27,10 +28,14 @@ function Welcome() {
           height={1024}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/10 to-background" />
-        <div className="absolute top-6 left-6 right-6 flex items-center justify-between">
-          <span className="rounded-full bg-background/80 px-3 py-1 text-xs font-semibold tracking-wider text-primary uppercase backdrop-blur">
-            Impacto · Maré · Mangue
-          </span>
+        <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
+          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-background/85 p-1.5 shadow-warm backdrop-blur">
+            <img
+              src={marisqueiIcon.url}
+              alt="Marisquei"
+              className="h-full w-full object-contain"
+            />
+          </div>
         </div>
         <div className="absolute bottom-6 left-4 right-4 flex justify-center">
           <div className="flex flex-col items-center gap-2 rounded-2xl bg-background/60 px-4 py-3 backdrop-blur-xl shadow-warm">
