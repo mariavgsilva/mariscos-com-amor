@@ -33,12 +33,12 @@ function Welcome() {
           </span>
         </div>
         <div className="absolute bottom-6 left-4 right-4 flex justify-center">
-          <div className="flex flex-col items-center gap-3 rounded-3xl bg-background/70 px-6 py-5 backdrop-blur-xl shadow-warm">
+          <div className="flex flex-col items-center gap-2 rounded-2xl bg-background/60 px-4 py-3 backdrop-blur-xl shadow-warm">
             <h1 className="sr-only">Marisquei</h1>
             <img
               src={marisqueiLogo.url}
               alt="Marisquei — Conecta, Apoia, Transforma"
-              className="w-full max-w-[360px] drop-shadow-[0_6px_24px_rgba(0,0,0,0.35)]"
+              className="w-full max-w-[280px] drop-shadow-[0_4px_16px_rgba(0,0,0,0.3)]"
             />
           </div>
         </div>
