@@ -18,7 +18,7 @@ export const Route = createFileRoute("/")({
 function Welcome() {
   return (
     <div className="mx-auto flex min-h-screen w-full max-w-[440px] flex-col bg-background">
-      <div className="relative h-[46vh] min-h-[360px] w-full overflow-hidden">
+      <div className="relative h-[52vh] min-h-[400px] w-full overflow-hidden">
         <img
           src={heroImg}
           alt="Marisqueira ao pôr do sol no manguezal"
@@ -26,7 +26,7 @@ function Welcome() {
           width={1536}
           height={1024}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/10 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/10 to-background/90" />
         <div className="absolute top-6 left-6 flex items-center gap-2">
           <img
             src={logoAsset.url}
@@ -37,18 +37,17 @@ function Welcome() {
             Impacto · Maré · Mangue
           </span>
         </div>
-      </div>
-
-      <div className="-mt-16 flex flex-1 flex-col gap-3 rounded-t-3xl bg-background px-5 pt-4 pb-8">
-        <div className="mx-auto mb-2 flex flex-col items-center">
-          <h1 className="font-display text-4xl font-bold text-primary leading-none">
+        <div className="absolute bottom-10 left-0 right-0 flex flex-col items-center text-center px-6">
+          <h1 className="font-display text-5xl font-bold text-white drop-shadow-lg leading-none">
             Marisquei
           </h1>
-          <p className="mt-1 text-[11px] font-semibold tracking-[0.2em] text-muted-foreground uppercase">
+          <p className="mt-2 text-sm font-semibold tracking-[0.2em] text-white/90 drop-shadow-md uppercase">
             Conecta · Apoia · Transforma
           </p>
         </div>
+      </div>
 
+      <div className="-mt-16 flex flex-1 flex-col gap-3 rounded-t-3xl bg-background px-5 pt-5 pb-8">
         <p className="text-xs font-semibold tracking-widest text-muted-foreground uppercase">
           Como você quer entrar?
         </p>
