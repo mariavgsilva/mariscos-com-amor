@@ -37,8 +37,8 @@ function Welcome() {
             Impacto · Maré · Mangue
           </span>
         </div>
-        <div className="absolute bottom-8 left-0 right-0 flex flex-col items-center text-center px-6">
-          <h1 className="font-display text-4xl font-bold text-white drop-shadow-lg leading-none">
+        <div className="absolute bottom-12 left-0 right-0 z-10 flex flex-col items-center text-center px-6">
+          <h1 className="font-display text-3xl font-bold text-white drop-shadow-lg leading-none">
             Marisquei
           </h1>
           <p className="mt-1 text-[11px] font-semibold tracking-[0.2em] text-white/90 drop-shadow-md uppercase">
