@@ -35,15 +35,24 @@ function Welcome() {
       </div>
 
       <div className="-mt-16 flex flex-1 flex-col gap-3 rounded-t-3xl bg-background px-5 pt-4 pb-8">
-        <img
-          src={logoAsset.url}
-          alt="Marisquei — conecta, apoia, transforma"
-          className="mx-auto -mt-4 mb-1 w-[78%] max-w-[320px] object-contain"
-        />
+        <div className="mx-auto -mt-16 mb-2 flex flex-col items-center">
+          <img
+            src={logoAsset.url}
+            alt="Marisquei"
+            className="h-32 w-32 object-contain drop-shadow-soft"
+          />
+          <h1 className="font-display text-4xl font-bold text-primary leading-none mt-1">
+            Marisquei
+          </h1>
+          <p className="mt-1 text-[11px] font-semibold tracking-[0.2em] text-muted-foreground uppercase">
+            Conecta · Apoia · Transforma
+          </p>
+        </div>
 
         <p className="text-xs font-semibold tracking-widest text-muted-foreground uppercase">
           Como você quer entrar?
         </p>
+
 
         <Link
           to="/marketplace"
