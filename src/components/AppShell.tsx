@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowLeft, ShoppingBasket } from "lucide-react";
 import type { ReactNode } from "react";
+import logoAsset from "@/assets/marisquei-logo.png.asset.json";
 
 export function AppShell({
   title,
@@ -32,8 +33,8 @@ export function AppShell({
               <ArrowLeft className="h-5 w-5" />
             </Link>
           ) : (
-            <Link to="/" className="font-display text-lg font-bold text-primary">
-              Marisquei
+            <Link to="/" className="flex items-center gap-2" aria-label="Marisquei">
+              <img src={logoAsset.url} alt="Marisquei" className="h-9 w-auto object-contain" />
             </Link>
           )}
           {title && (
