@@ -32,13 +32,15 @@ function Welcome() {
             Impacto · Maré · Mangue
           </span>
         </div>
-        <div className="absolute bottom-8 left-6 right-6">
-          <h1 className="sr-only">Marisquei</h1>
-          <img
-            src={marisqueiLogo.url}
-            alt="Marisquei — Conecta, Apoia, Transforma"
-            className="w-full max-w-[320px] drop-shadow-[0_4px_20px_rgba(0,0,0,0.25)]"
-          />
+        <div className="absolute bottom-6 left-4 right-4 flex justify-center">
+          <div className="flex flex-col items-center gap-3 rounded-3xl bg-background/70 px-6 py-5 backdrop-blur-xl shadow-warm">
+            <h1 className="sr-only">Marisquei</h1>
+            <img
+              src={marisqueiLogo.url}
+              alt="Marisquei — Conecta, Apoia, Transforma"
+              className="w-full max-w-[360px] drop-shadow-[0_6px_24px_rgba(0,0,0,0.35)]"
+            />
+          </div>
         </div>
       </div>
 
