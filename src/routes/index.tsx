@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { heroImg } from "@/lib/mock-data";
+import marisqueiLogo from "@/assets/marisquei-logo.png.asset.json";
 import { Shell, ShoppingBasket, Handshake } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -32,12 +33,12 @@ function Welcome() {
           </span>
         </div>
         <div className="absolute bottom-8 left-6 right-6">
-          <h1 className="font-display text-5xl leading-[0.95] font-bold text-foreground">
-            Marisquei
-          </h1>
-          <p className="mt-2 max-w-[20rem] text-sm leading-relaxed text-foreground/80">
-            Marisco fresco direto do mangue. Cada compra ajuda a levar EPIs para quem trabalha na maré.
-          </p>
+          <h1 className="sr-only">Marisquei</h1>
+          <img
+            src={marisqueiLogo.url}
+            alt="Marisquei — Conecta, Apoia, Transforma"
+            className="w-full max-w-[320px] drop-shadow-[0_4px_20px_rgba(0,0,0,0.25)]"
+          />
         </div>
       </div>
 
