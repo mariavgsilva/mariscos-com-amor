@@ -27,7 +27,12 @@ function Welcome() {
           height={1024}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/10 to-background" />
-        <div className="absolute top-6 left-6 right-6 flex items-center justify-between">
+        <div className="absolute top-6 left-6 flex items-center gap-2">
+          <img
+            src={logoAsset.url}
+            alt="Marisquei"
+            className="h-10 w-10 object-contain rounded-full bg-background/80 p-1 backdrop-blur"
+          />
           <span className="rounded-full bg-background/80 px-3 py-1 text-xs font-semibold tracking-wider text-primary uppercase backdrop-blur">
             Impacto · Maré · Mangue
           </span>
@@ -35,13 +40,8 @@ function Welcome() {
       </div>
 
       <div className="-mt-16 flex flex-1 flex-col gap-3 rounded-t-3xl bg-background px-5 pt-4 pb-8">
-        <div className="mx-auto -mt-16 mb-2 flex flex-col items-center">
-          <img
-            src={logoAsset.url}
-            alt="Marisquei"
-            className="h-32 w-32 object-contain drop-shadow-soft"
-          />
-          <h1 className="font-display text-4xl font-bold text-primary leading-none mt-1">
+        <div className="mx-auto mb-2 flex flex-col items-center">
+          <h1 className="font-display text-4xl font-bold text-primary leading-none">
             Marisquei
           </h1>
           <p className="mt-1 text-[11px] font-semibold tracking-[0.2em] text-muted-foreground uppercase">
