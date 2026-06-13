@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { heroImg } from "@/lib/mock-data";
+import logoAsset from "@/assets/marisquei-logo.png.asset.json";
 import { Shell, ShoppingBasket, Handshake } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -17,7 +18,7 @@ export const Route = createFileRoute("/")({
 function Welcome() {
   return (
     <div className="mx-auto flex min-h-screen w-full max-w-[440px] flex-col bg-background">
-      <div className="relative h-[58vh] min-h-[440px] w-full overflow-hidden">
+      <div className="relative h-[46vh] min-h-[360px] w-full overflow-hidden">
         <img
           src={heroImg}
           alt="Marisqueira ao pôr do sol no manguezal"
@@ -25,23 +26,21 @@ function Welcome() {
           width={1536}
           height={1024}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/10 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/10 to-background" />
         <div className="absolute top-6 left-6 right-6 flex items-center justify-between">
           <span className="rounded-full bg-background/80 px-3 py-1 text-xs font-semibold tracking-wider text-primary uppercase backdrop-blur">
             Impacto · Maré · Mangue
           </span>
         </div>
-        <div className="absolute bottom-8 left-6 right-6">
-          <h1 className="font-display text-5xl leading-[0.95] font-bold text-foreground">
-            Marisquei
-          </h1>
-          <p className="mt-2 max-w-[20rem] text-sm leading-relaxed text-foreground/80">
-            Marisco fresco direto do mangue. Cada compra ajuda a levar EPIs para quem trabalha na maré.
-          </p>
-        </div>
       </div>
 
-      <div className="-mt-4 flex flex-1 flex-col gap-3 rounded-t-3xl bg-background px-5 pt-6 pb-8">
+      <div className="-mt-16 flex flex-1 flex-col gap-3 rounded-t-3xl bg-background px-5 pt-4 pb-8">
+        <img
+          src={logoAsset.url}
+          alt="Marisquei — conecta, apoia, transforma"
+          className="mx-auto -mt-4 mb-1 w-[78%] max-w-[320px] object-contain"
+        />
+
         <p className="text-xs font-semibold tracking-widest text-muted-foreground uppercase">
           Como você quer entrar?
         </p>
