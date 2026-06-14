@@ -29,13 +29,16 @@ function Welcome() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/10 to-background" />
         <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
-          <div className="flex h-14 w-14 items-center justify-center rounded-full bg-background/85 p-1.5 shadow-warm backdrop-blur">
+          <Link
+            to="/"
+            className="flex h-14 w-14 items-center justify-center rounded-full bg-background/85 p-1.5 shadow-warm backdrop-blur transition-transform active:scale-95"
+          >
             <img
               src={marisqueiIcon.url}
               alt="Marisquei"
               className="h-full w-full object-contain"
             />
-          </div>
+          </Link>
         </div>
         <div className="absolute bottom-6 left-4 right-4 flex justify-center">
           <div className="flex flex-col items-center gap-2 rounded-2xl bg-background/60 px-4 py-3 backdrop-blur-xl shadow-warm">
