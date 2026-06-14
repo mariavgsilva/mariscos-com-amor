@@ -29,7 +29,7 @@ function Welcome() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/10 to-background" />
         <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
-          <div className="flex h-20 w-20 items-center justify-center rounded-full bg-background/85 p-2 shadow-warm backdrop-blur">
+          <div className="flex h-14 w-14 items-center justify-center rounded-full bg-background/85 p-1.5 shadow-warm backdrop-blur">
             <img
               src={marisqueiIcon.url}
               alt="Marisquei"
@@ -109,3 +109,4 @@ const Stat = ({ n, label }: { n: string; label: string }) => (
   </div>
 );
 const Divider = () => <span className="h-8 w-px bg-foreground/10" />;
+
