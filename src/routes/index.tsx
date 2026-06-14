@@ -27,7 +27,7 @@ function Welcome() {
           width={1536}
           height={1024}
         />
-        
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/10 to-background" />
         <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
           <Link
             to="/"
