@@ -24,7 +24,7 @@ function Cadastro() {
       <div className="space-y-3">
         <Field icon={<User />} label="Seu nome" placeholder="Como gostaria de ser chamada" />
         <Field icon={<User />} label="CPF" placeholder="000.000.000-00" />
-        <Field icon={<MapPin />} label="Cidade onde trabalha" placeholder="Maragogipe, Saubara…" />
+        <Field icon={<MapPin />} label="Cidade onde trabalha" placeholder="Igarassu, Itamaracá…" />
 
         <div className="rounded-2xl border border-border bg-card p-4">
           <p className="mb-3 flex items-center gap-2 text-sm font-semibold">
