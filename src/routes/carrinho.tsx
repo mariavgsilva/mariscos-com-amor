@@ -39,17 +39,17 @@ function Carrinho() {
                   <p className="text-sm font-bold">{p.nome}</p>
                   <p className="text-xs text-muted-foreground">R$ {p.preco}/{p.unidade}</p>
                 </div>
-                <button className="text-muted-foreground hover:text-destructive" aria-label="Remover">
+                <button onClick={() => removeItem(p.id)} className="text-muted-foreground hover:text-destructive" aria-label="Remover">
                   <Trash2 className="h-4 w-4" />
                 </button>
               </div>
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2 rounded-full bg-secondary p-1">
-                  <button className="flex h-7 w-7 items-center justify-center rounded-full bg-background text-primary">
+                  <button onClick={() => updateQtd(p.id, -1)} className="flex h-7 w-7 items-center justify-center rounded-full bg-background text-primary" aria-label="Diminuir">
                     <Minus className="h-3.5 w-3.5" />
                   </button>
                   <span className="w-5 text-center text-sm font-bold">{p.qtd}</span>
-                  <button className="flex h-7 w-7 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                  <button onClick={() => updateQtd(p.id, 1)} className="flex h-7 w-7 items-center justify-center rounded-full bg-primary text-primary-foreground" aria-label="Aumentar">
                     <Plus className="h-3.5 w-3.5" />
                   </button>
                 </div>
