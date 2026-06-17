@@ -33,8 +33,8 @@ function Cadastro() {
             <Users className="h-4 w-4 text-primary" /> Você faz parte de uma colônia?
           </p>
           <div className="grid grid-cols-2 gap-2">
-            <Pill active>Sim, sou de colônia</Pill>
-            <Pill>Trabalho sozinha</Pill>
+            <Pill active={colonias === "sim"} onClick={() => setColonias("sim")}>Sim, sou de colônia</Pill>
+            <Pill active={colonias === "nao"} onClick={() => setColonias("nao")}>Trabalho sozinha</Pill>
           </div>
           <input
             placeholder="Nome da colônia (opcional)"
