@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { AppShell } from "@/components/AppShell";
 import { ShieldCheck } from "lucide-react";
@@ -38,13 +39,7 @@ function Questionario() {
           <Choices items={["Sempre", "Às vezes", "Quase nunca", "Não"]} />
         </Q>
         <Q label="Quais EPIs você já possui?">
-          <div className="flex flex-wrap gap-2">
-            {["Botas", "Luvas", "Chapéu", "Protetor solar", "Avental impermeável", "Outros"].map((e, i) => (
-              <button key={e} className={`rounded-full px-4 py-2 text-sm font-semibold ${i < 2 ? "bg-primary text-primary-foreground" : "bg-secondary"}`}>
-                {e}
-              </button>
-            ))}
-          </div>
+          <MultiChoices items={["Botas", "Luvas", "Chapéu", "Protetor solar", "Avental impermeável", "Outros"]} />
         </Q>
         <Q label="Já sofreu acidentes relacionados ao trabalho?">
           <Choices items={["Nunca", "1 vez", "Mais de uma", "Prefiro não dizer"]} />
@@ -71,12 +66,52 @@ const Q = ({ label, children }: { label: string; children: React.ReactNode }) =>
   </div>
 );
 
-const Choices = ({ items }: { items: string[] }) => (
-  <div className="grid grid-cols-2 gap-2">
-    {items.map((c, i) => (
-      <button key={c} className={`rounded-xl px-3 py-3 text-sm font-semibold ${i === 0 ? "bg-primary text-primary-foreground shadow-soft" : "bg-secondary"}`}>
-        {c}
-      </button>
-    ))}
-  </div>
-);
+const Choices = ({ items }: { items: string[] }) => {
+  const [selected, setSelected] = useState<number | null>(null);
+  return (
+    <div className="grid grid-cols-2 gap-2">
+      {items.map((c, i) => (
+        <button
+          key={c}
+          onClick={() => setSelected(i)}
+          className={`rounded-xl px-3 py-3 text-sm font-semibold transition-colors ${
+            selected === i
+              ? "bg-primary text-primary-foreground shadow-soft"
+              : "bg-secondary"
+          }`}
+        >
+          {c}
+        </button>
+      ))}
+    </div>
+  );
+};
+
+const MultiChoices = ({ items }: { items: string[] }) => {
+  const [selected, setSelected] = useState<Set<number>>(new Set());
+  const toggle = (i: number) => {
+    setSelected((prev) => {
+      const next = new Set(prev);
+      if (next.has(i)) next.delete(i);
+      else next.add(i);
+      return next;
+    });
+  };
+  return (
+    <div className="flex flex-wrap gap-2">
+      {items.map((e, i) => (
+        <button
+          key={e}
+          onClick={() => toggle(i)}
+          className={`rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
+            selected.has(i)
+              ? "bg-primary text-primary-foreground"
+              : "bg-secondary"
+          }`}
+        >
+          {e}
+        </button>
+      ))}
+    </div>
+  );
+};
