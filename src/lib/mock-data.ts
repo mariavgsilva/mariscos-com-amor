@@ -31,7 +31,7 @@ export const marisqueiras: Marisqueira[] = [
     id: "dona-jurema",
     nome: "Dona Jurema",
     foto: marisqueiraImg,
-    localizacao: "Maragogipe, BA",
+    localizacao: "Igarassu, PE",
     colonia: "Colônia Z-21",
     bio: "Marisco há 28 anos no mangue do Recôncavo. Quem prova, volta.",
     produtosIds: ["p1", "p2"],
