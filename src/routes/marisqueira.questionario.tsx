@@ -39,13 +39,7 @@ function Questionario() {
           <Choices items={["Sempre", "Às vezes", "Quase nunca", "Não"]} />
         </Q>
         <Q label="Quais EPIs você já possui?">
-          <div className="flex flex-wrap gap-2">
-            {["Botas", "Luvas", "Chapéu", "Protetor solar", "Avental impermeável", "Outros"].map((e, i) => (
-              <button key={e} className={`rounded-full px-4 py-2 text-sm font-semibold ${i < 2 ? "bg-primary text-primary-foreground" : "bg-secondary"}`}>
-                {e}
-              </button>
-            ))}
-          </div>
+          <MultiChoices items={["Botas", "Luvas", "Chapéu", "Protetor solar", "Avental impermeável", "Outros"]} />
         </Q>
         <Q label="Já sofreu acidentes relacionados ao trabalho?">
           <Choices items={["Nunca", "1 vez", "Mais de uma", "Prefiro não dizer"]} />
