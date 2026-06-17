@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
 import { AppShell } from "@/components/AppShell";
 import { produtos } from "@/lib/mock-data";
 import { Minus, Plus, Trash2, MapPin, CreditCard, Truck } from "lucide-react";
@@ -9,10 +10,16 @@ export const Route = createFileRoute("/carrinho")({
 });
 
 function Carrinho() {
-  const itens = [
+  const [itens, setItens] = useState(() => [
     { ...produtos[0], qtd: 1 },
     { ...produtos[2], qtd: 2 },
-  ];
+  ]);
+  const updateQtd = (id: string | number, delta: number) =>
+    setItens((prev) =>
+      prev.map((i) => (i.id === id ? { ...i, qtd: Math.max(1, i.qtd + delta) } : i))
+    );
+  const removeItem = (id: string | number) =>
+    setItens((prev) => prev.filter((i) => i.id !== id));
   const subtotal = itens.reduce((s, i) => s + i.preco * i.qtd, 0);
   const frete = 12;
   const taxa = 2.5;
