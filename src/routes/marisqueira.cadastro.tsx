@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { AppShell } from "@/components/AppShell";
 import { Camera, User, MapPin, Users } from "lucide-react";
+import { useState } from "react";
 
 export const Route = createFileRoute("/marisqueira/cadastro")({
   head: () => ({ meta: [{ title: "Cadastro de marisqueira · Marisquei" }] }),
