@@ -9,6 +9,7 @@ export const Route = createFileRoute("/marisqueira/cadastro")({
 });
 
 function Cadastro() {
+  const [colonias, setColonias] = useState<"sim" | "nao">("sim");
   return (
     <AppShell title="Bem-vinda à Marisquei" subtitle="Passo 1 de 2 · seus dados">
       <div className="mb-5 h-1.5 overflow-hidden rounded-full bg-secondary">
