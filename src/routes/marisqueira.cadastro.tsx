@@ -81,8 +81,9 @@ const Field = ({
   </label>
 );
 
-const Pill = ({ children, active }: { children: React.ReactNode; active?: boolean }) => (
+const Pill = ({ children, active, onClick }: { children: React.ReactNode; active?: boolean; onClick?: () => void }) => (
   <button
+    onClick={onClick}
     className={`rounded-xl px-3 py-3 text-sm font-semibold ${
       active ? "bg-primary text-primary-foreground shadow-soft" : "bg-secondary text-secondary-foreground"
     }`}
