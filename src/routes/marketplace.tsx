@@ -10,7 +10,7 @@ export const Route = createFileRoute("/marketplace")({
 
 function Marketplace() {
   return (
-    <AppShell title="Marisco do dia" subtitle="Maragogipe e região" showCart cartCount={2}>
+    <AppShell title="Marisco do dia" subtitle="Igarassu e região" showCart cartCount={2}>
       <div className="relative mb-4">
         <Search className="absolute top-1/2 left-4 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
         <input
