@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { AppShell } from "@/components/AppShell";
 import { Camera, User, MapPin, Users } from "lucide-react";
+import { useState } from "react";
 
 export const Route = createFileRoute("/marisqueira/cadastro")({
   head: () => ({ meta: [{ title: "Cadastro de marisqueira · Marisquei" }] }),
@@ -8,6 +9,7 @@ export const Route = createFileRoute("/marisqueira/cadastro")({
 });
 
 function Cadastro() {
+  const [colonias, setColonias] = useState<"sim" | "nao">("sim");
   return (
     <AppShell title="Bem-vinda à Marisquei" subtitle="Passo 1 de 2 · seus dados">
       <div className="mb-5 h-1.5 overflow-hidden rounded-full bg-secondary">
@@ -31,8 +33,8 @@ function Cadastro() {
             <Users className="h-4 w-4 text-primary" /> Você faz parte de uma colônia?
           </p>
           <div className="grid grid-cols-2 gap-2">
-            <Pill active>Sim, sou de colônia</Pill>
-            <Pill>Trabalho sozinha</Pill>
+            <Pill active={colonias === "sim"} onClick={() => setColonias("sim")}>Sim, sou de colônia</Pill>
+            <Pill active={colonias === "nao"} onClick={() => setColonias("nao")}>Trabalho sozinha</Pill>
           </div>
           <input
             placeholder="Nome da colônia (opcional)"
@@ -79,8 +81,9 @@ const Field = ({
   </label>
 );
 
-const Pill = ({ children, active }: { children: React.ReactNode; active?: boolean }) => (
+const Pill = ({ children, active, onClick }: { children: React.ReactNode; active?: boolean; onClick?: () => void }) => (
   <button
+    onClick={onClick}
     className={`rounded-xl px-3 py-3 text-sm font-semibold ${
       active ? "bg-primary text-primary-foreground shadow-soft" : "bg-secondary text-secondary-foreground"
     }`}
