@@ -16,7 +16,9 @@ export const Route = createFileRoute("/marisqueira/$id")({
 });
 
 function PerfilMarisqueira() {
-  const { marisqueira: m } = Route.useLoaderData();
+  const { id } = Route.useParams();
+  const m = marisqueiras.find((x) => x.id === id);
+  if (!m) return <div className="p-8 text-center">Marisqueira não encontrada.</div>;
   const seus = produtos.filter((p) => p.marisqueiraId === m.id);
   return (
     <AppShell back="/marketplace" showCart cartCount={2}>
