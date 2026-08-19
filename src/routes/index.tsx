@@ -9,8 +9,8 @@ export const Route = createFileRoute("/")({
     meta: [
       { title: "Marisquei — Mariscos direto do mangue" },
       { name: "description", content: "Compre mariscos frescos direto de marisqueiras e ajude a levar EPIs para quem mais precisa." },
-      { property: "og:title", content: "Marisquei" },
-      { property: "og:description", content: "Marketplace de impacto social com marisqueiras do Recôncavo." },
+      { property: "og:title", content: "Marisquei — Mariscos direto do mangue" },
+      { property: "og:description", content: "Compre mariscos frescos direto de marisqueiras e ajude a levar EPIs para quem mais precisa." },
     ],
   }),
   component: Welcome,
